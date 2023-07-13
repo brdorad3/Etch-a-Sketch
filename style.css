@@ -1,0 +1,22 @@
+#dog{
+    border: 1px solid black;
+    
+}
+.piva ,.dva{
+    width:20px;
+    height: 20px;;
+}
+.piva{
+   
+    border: 1px solid red;
+}
+.dva{
+    border: 1px solid blue;
+    display: flex;
+}
+#dvi{
+    
+}
+#dvog{
+    display: flex;
+}
