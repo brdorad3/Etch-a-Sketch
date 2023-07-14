@@ -1,21 +1,48 @@
-const div =document.createElement('div');
-div.setAttribute('id','dog')
-const div2=document.createElement('div');
-div2.setAttribute('id','dvog');
-const div3=document.createElement('div');
-div3.setAttribute('id','dvi');
 
-for(let i=0;i<16;i++){
+const grid =document.createElement('div');
+grid.setAttribute('id','dog')
 
- const diva=document.createElement('div');
- diva.classList.add('dva');
-   div3.appendChild(diva);
-}
-for(let j=0;j<16;j++){
-    const piva=document.createElement('div');
- piva.classList.add('piva');
-   div2.appendChild(piva);
+
+let column=16;
+let row=16;
+
+
+
+for(let i=0;i<column;i++){
+const column=document.createElement('div');
+column.classList='column';
+
+
+for(let j=0;j<row;j++){
+ const row=document.createElement('div');
+row.classList='row';
+
+ 
+ column.appendChild(row);
    }
-document.body.appendChild(div);
-div.appendChild(div2);
-div.appendChild(div3);
+
+   grid.appendChild(column);
+  }
+   
+document.body.appendChild(grid);
+
+
+/*
+var columns = 4;
+var rows = 4;
+
+var grid = document.createElement('div');
+grid.className = 'grid';
+for (var i = 0; i < columns; ++i) {
+    var column = document.createElement('div'); // create column
+    column.className = 'column';
+    for (var j = 0; j < rows; ++j) {
+        var row = document.createElement('div'); // create row
+        row.className = 'row';
+        row.textContent=' ' ;// set text
+        column.appendChild(row); // append row in column
+    }
+    grid.appendChild(column); // append column inside grid
+}
+document.body.appendChild(grid);
+*/

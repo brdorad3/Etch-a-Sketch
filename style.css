@@ -1,22 +1,24 @@
 #dog{
-    border: 1px solid black;
+    
+    display: flex;
+    justify-content: center;
     
 }
-.piva ,.dva{
-    width:20px;
-    height: 20px;;
-}
-.piva{
-   
-    border: 1px solid red;
-}
-.dva{
-    border: 1px solid blue;
-    display: flex;
-}
-#dvi{
-    
-}
-#dvog{
-    display: flex;
-}
+
+
+    .grid {
+        display: flex;   /* <--- required */
+    }
+
+    .column {
+         /* <--- required (style column to fill the same space as the other columns) */
+    }
+
+    .row {
+        
+        background: gold;
+        text-align: center;
+     border: 1px solid red;
+        width: 40px;
+        height: 40px;
+    }
