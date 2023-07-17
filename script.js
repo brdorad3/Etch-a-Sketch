@@ -1,48 +1,73 @@
 
-const grid =document.createElement('div');
-grid.setAttribute('id','dog')
+const dog =document.createElement('div');
+dog.setAttribute('id','dog')
 
+const grid=document.createElement('div');
+grid.classList.add('grid');
 
-let column=16;
-let row=16;
+const squares=grid.querySelectorAll('div')
+squares.forEach((div)=>div.remove());
 
+const button=document.createElement('button');
+button.classList.add('btn');
+button.textContent='Choose size';
 
+const heading=document.createElement('div');
+heading.classList.add('heading');
 
-for(let i=0;i<column;i++){
-const column=document.createElement('div');
-column.classList='column';
+const h1=document.createElement('h1');
+h1.textContent='Etch-a-Sketch';
 
+const main=document.createElement('div');
+main.classList='main';
 
-for(let j=0;j<row;j++){
- const row=document.createElement('div');
-row.classList='row';
+function izgradi(size){
+  dog.appendChild(main);
+  
+heading.appendChild(h1);  
+dog.appendChild(heading);
+dog.appendChild(heading);
 
+grid.style.gridTemplateColumns=`repeat(${size}, 1fr)`;
+grid.style.gridTemplateRows=`repeat(${size}, 1fr)`;
+
+let amount=size*size-1;
+for(let i=0;i<amount;++i){
+const row=document.createElement('div');
+row.classList.add('row');
+grid.appendChild(row);
+
+ row.addEventListener("mouseover", function(){
+  row.style.backgroundColor='red';
+
+ })
  
- column.appendChild(row);
-   }
-
-   grid.appendChild(column);
   }
-   
-document.body.appendChild(grid);
+  dog.appendChild(grid);
+  
+
+  
+   document.body.appendChild(dog);
+  
+   dog.appendChild(button);
+ 
+  }
+
+  izgradi(16);
 
 
-/*
-var columns = 4;
-var rows = 4;
 
-var grid = document.createElement('div');
-grid.className = 'grid';
-for (var i = 0; i < columns; ++i) {
-    var column = document.createElement('div'); // create column
-    column.className = 'column';
-    for (var j = 0; j < rows; ++j) {
-        var row = document.createElement('div'); // create row
-        row.className = 'row';
-        row.textContent=' ' ;// set text
-        column.appendChild(row); // append row in column
-    }
-    grid.appendChild(column); // append column inside grid
-}
-document.body.appendChild(grid);
-*/
+button.addEventListener("click",()=>{
+  
+  broj=prompt("Choose a number between 16 and 100");
+  grid.innerHTML = ''
+  if(broj<16 ||broj>100){
+    alert("Wrong number try again!");
+  }
+  else{
+    izgradi(broj);
+  }
+  
+  })
+  
+  
