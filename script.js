@@ -1,37 +1,21 @@
 
-const dog =document.createElement('div');
-dog.setAttribute('id','dog')
+const dog =document.getElementById('dog');
 
-const grid=document.createElement('div');
-grid.classList.add('grid');
+
+const grid=document.querySelector('.grid');
+
 
 const squares=grid.querySelectorAll('div')
 squares.forEach((div)=>div.remove());
 
-const button=document.createElement('button');
-button.classList.add('btn');
-button.textContent='Choose size';
-
-const heading=document.createElement('div');
-heading.classList.add('heading');
-
-const h1=document.createElement('h1');
-h1.textContent='Etch-a-Sketch';
-
-const main=document.createElement('div');
-main.classList='main';
+const button=document.querySelector('.btn')
 
 function izgradi(size){
-  dog.appendChild(main);
   
-heading.appendChild(h1);  
-dog.appendChild(heading);
-dog.appendChild(heading);
-
 grid.style.gridTemplateColumns=`repeat(${size}, 1fr)`;
 grid.style.gridTemplateRows=`repeat(${size}, 1fr)`;
 
-let amount=size*size-1;
+let amount=size*size;
 for(let i=0;i<amount;++i){
 const row=document.createElement('div');
 row.classList.add('row');
@@ -41,21 +25,15 @@ grid.appendChild(row);
   row.style.backgroundColor='red';
 
  })
- 
-  }
-  dog.appendChild(grid);
-  
-
-  
-   document.body.appendChild(dog);
-  
-   dog.appendChild(button);
- 
-  }
+  }}
 
   izgradi(16);
 
+  button.addEventListener("hover",()=>{
+    button.style.backgroundColor='red';
 
+
+  })
 
 button.addEventListener("click",()=>{
   
@@ -69,5 +47,8 @@ button.addEventListener("click",()=>{
   }
   
   })
-  
+
+
+
+
   
